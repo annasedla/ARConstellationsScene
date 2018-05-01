@@ -18,12 +18,37 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         let scene = SCNScene()
-        let box = SCNBox(width: 0.0001, height: 0.2, length: 0.2, chamferRadius: 0)
+        let box = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
+        //let box = SCNPlane(width: 20, height: 200)
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "pisces.png")
-        box.materials = [material]
+        
+        
+        let sides = [
+            UIColor.blue,          // Front
+            UIColor.red,        // Right
+            UIColor.green,        // Back
+            UIColor.cyan,        // Left
+            UIColor.yellow,        // Top
+            UIColor.purple         // Bottom
+        ]
+        
+        let materials = sides.map { (side) -> SCNMaterial in
+            let material = SCNMaterial()
+            material.diffuse.contents = side
+            material.locksAmbientWithDiffuse = true
+            return material
+        }
+        
+        box.materials = materials
         let boxNode = SCNNode(geometry: box)
-        boxNode.position = SCNVector3(0,0,-0.5)
+        boxNode.constraints = [SCNBillboardConstraint()]
+        
+        
+        boxNode.position = SCNVector3(0,0,-4)
+        //boxNode.transform = SCNMatrix4Rotate(boxNode.transform, Float.pi/2, 1, 1, 0)
+        //boxNode.orientation.dele = sceneView.pointOfView!
+        
         scene.rootNode.addChildNode(boxNode)
         
         // Set the scene to the view
