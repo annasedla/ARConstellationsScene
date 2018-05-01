@@ -17,6 +17,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let scene = SCNScene()
+        let box = SCNBox(width: 0.0001, height: 0.2, length: 0.2, chamferRadius: 0)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "pisces.png")
+        box.materials = [material]
+        let boxNode = SCNNode(geometry: box)
+        boxNode.position = SCNVector3(0,0,-0.5)
+        scene.rootNode.addChildNode(boxNode)
+        
+        // Set the scene to the view
+        sceneView.scene = scene
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -24,10 +36,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+       // let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
         // Set the scene to the view
-        sceneView.scene = scene
+        //sceneView.scene = scene
+        
+        //let geometry = SCNSphere(radius: 0.2)
+        //geometry.firstMaterial?.diffuse.contents = UIImage(named: "pisces.png")
+        //let sphereNode = SCNNode(geometry: geometry)
+        //sphereNode.position = SCNVector3(0, 0, -1)
+        //sceneView.scene.rootNode.addChildNode(sphereNode)
+        
+        //let circleNode = createSphereNode(with: 0.2, color: .blue)
+       // circleNode.position = SCNVector3(0, 0, -1) // 1 meter in front of camera
+        //sceneView.scene.rootNode.addChildNode(circleNode)
+    }
+    
+    //creates sphere
+    func createSphereNode(with radius: CGFloat, color: UIColor) -> SCNNode {
+        let geometry = SCNSphere(radius: radius)
+        geometry.firstMaterial?.diffuse.contents = color
+        let sphereNode = SCNNode(geometry: geometry)
+        return sphereNode
     }
     
     override func viewWillAppear(_ animated: Bool) {
