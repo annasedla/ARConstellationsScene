@@ -18,39 +18,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         let scene = SCNScene()
-        let box = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
-        //let box = SCNPlane(width: 20, height: 200)
-        let material = SCNMaterial()
-        material.diffuse.contents = UIImage(named: "pisces.png")
-        
-        
-        let sides = [
-            UIColor.blue,          // Front
-            UIColor.red,        // Right
-            UIColor.green,        // Back
-            UIColor.cyan,        // Left
-            UIColor.yellow,        // Top
-            UIColor.purple         // Bottom
-        ]
-        
-        let materials = sides.map { (side) -> SCNMaterial in
-            let material = SCNMaterial()
-            material.diffuse.contents = side
-            material.locksAmbientWithDiffuse = true
-            return material
-        }
-        
-        box.materials = materials
-        let boxNode = SCNNode(geometry: box)
-        boxNode.constraints = [SCNBillboardConstraint()]
-        
-        
-        boxNode.position = SCNVector3(0,0,-4)
-        //boxNode.transform = SCNMatrix4Rotate(boxNode.transform, Float.pi/2, 1, 1, 0)
-        //boxNode.orientation.dele = sceneView.pointOfView!
-        
-        scene.rootNode.addChildNode(boxNode)
-        
+       
+        placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 1, y: 0, z: -4, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "scorpio")!, x: 0, y: 3, z: -4, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -3, scene: scene)
+
         // Set the scene to the view
         sceneView.scene = scene
         
@@ -77,14 +49,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         //sceneView.scene.rootNode.addChildNode(circleNode)
     }
     
-    //creates sphere
-    func createSphereNode(with radius: CGFloat, color: UIColor) -> SCNNode {
-        let geometry = SCNSphere(radius: radius)
-        geometry.firstMaterial?.diffuse.contents = color
-        let sphereNode = SCNNode(geometry: geometry)
-        return sphereNode
+    // places constellation
+    func placeConstellationInSpace(constellation: UIImage, x: Float, y: Float, z: Float, scene: SCNScene) {
+        let box = SCNBox(width: 0.8, height: 0.8, length: 0.8, chamferRadius: 0)
+        let material = SCNMaterial()
+        material.diffuse.contents = constellation
+        box.materials = [material]
+        let boxNode = SCNNode(geometry: box)
+        //boxNode.constraints = [SCNBillboardConstraint()]
+        boxNode.position = SCNVector3(x, y, z)
+        //boxNode.transform = SCNMatrix4Rotate(boxNode.transform, Float.pi/2, 0, 1, 1)
+        //boxNode.orientation.dele = sceneView.pointOfView!
+        scene.rootNode.addChildNode(boxNode)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
