@@ -19,9 +19,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let scene = SCNScene()
        
-        placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 1, y: 0, z: -4, scene: scene)
-        placeConstellationInSpace(constellation: UIImage(named: "scorpio")!, x: 0, y: 3, z: -4, scene: scene)
-        placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -3, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 0, y: 4, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "scorpio")!, x: 2, y: 2, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -5, scene: scene)
 
         // Set the scene to the view
         sceneView.scene = scene
@@ -51,12 +51,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     // places constellation
     func placeConstellationInSpace(constellation: UIImage, x: Float, y: Float, z: Float, scene: SCNScene) {
-        let box = SCNBox(width: 0.8, height: 0.8, length: 0.8, chamferRadius: 0)
+        let box = SCNBox(width: 2.9, height: 2.9, length: 0.001, chamferRadius: 0)
         let material = SCNMaterial()
         material.diffuse.contents = constellation
         box.materials = [material]
         let boxNode = SCNNode(geometry: box)
-        //boxNode.constraints = [SCNBillboardConstraint()]
+        boxNode.constraints = [SCNBillboardConstraint()]
         boxNode.position = SCNVector3(x, y, z)
         //boxNode.transform = SCNMatrix4Rotate(boxNode.transform, Float.pi/2, 0, 1, 1)
         //boxNode.orientation.dele = sceneView.pointOfView!
