@@ -40,11 +40,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
         
         // Create a new scene
        // let scene = SCNScene(named: "art.scnassets/ship.scn")!
@@ -76,11 +78,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         //boxNode.orientation.dele = sceneView.pointOfView!
         scene.rootNode.addChildNode(boxNode)
     }
+    
+    func getHeading() -> CLDeviceOrientation {
+        return self.locationManager.headingOrientation
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        configuration.isAutoFocusEnabled = true
+        configuration.worldAlignment = .gravityAndHeading
 
         // Run the view's session
         sceneView.session.run(configuration)
