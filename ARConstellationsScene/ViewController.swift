@@ -10,6 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 import CoreLocation
+import CoreMotion
 
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
 
@@ -20,6 +21,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         
         let scene = SCNScene()
+        
+        //core motion framework
+        let motionManager = CMMotionManager()
+        motionManager.startDeviceMotionUpdates()
+        var data = motionManager.deviceMotion
        
         placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 0, y: 4, z: -5, scene: scene)
         placeConstellationInSpace(constellation: UIImage(named: "scorpio")!, x: 2, y: 2, z: -5, scene: scene)
