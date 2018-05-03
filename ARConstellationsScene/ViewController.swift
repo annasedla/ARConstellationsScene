@@ -27,9 +27,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         //motionManager.startDeviceMotionUpdates()
         //var data = motionManager.deviceMotion
        
-        placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 0, y: 4, z: -5, scene: scene)
-        placeConstellationInSpace(constellation: UIImage(named: "scorpio")!, x: 2, y: 2, z: -5, scene: scene)
+       // placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 0, y: 4, z: -5, scene: scene)
+       // placeConstellationInSpace(constellation: UIImage(named: "scorpio")!, x: 2, y: 2, z: -5, scene: scene)
+        //placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -5, scene: scene)
+        
+        //usaminor, usamajor, gemini
+        
+        placeConstellationInSpace(constellation: UIImage(named: "ursaminor")!, x: 0, y: 15, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "ursamajor")!, x: 0, y: 4, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "gemini")!, x: 8, y: 2, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "orion")!, x: 16, y: 0, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "virgo")!, x: 16, y: 3, z: -5, scene: scene)
         placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "leo")!, x: 0, y: 0, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "virgo")!, x: -3, y: 0, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "aries")!, x: 20, y: 3, z: -0.001, scene: scene)
 
         // Set the scene to the view
         sceneView.scene = scene
