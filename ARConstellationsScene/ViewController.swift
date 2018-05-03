@@ -16,7 +16,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
     @IBOutlet var sceneView: ARSCNView!
     var locationManager: CLLocationManager!
-    var baseLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Cleveland OH
+    var baseLocation: CLLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Cleveland
     var currentLocation: CLLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Default
     
     override func viewDidLoad() {
@@ -85,7 +85,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let boxNode = SCNNode(geometry: box)
         boxNode.constraints = [SCNBillboardConstraint()]
         boxNode.position = SCNVector3(x, y, z)
-        //boxNode.transform = SCNMatrix4(MatrixTransforms.transformMatrix(for: simd_float4x4(boxNode.transform), originLocation: baseLocation, location: currentLocation))
+        if (baseLocation != currentLocation){
+        boxNode.transform = SCNMatrix4(MatrixTransforms.transformMatrix(for: simd_float4x4(boxNode.transform), originLocation: baseLocation, location: currentLocation))
+        }
         //boxNode.orientation.dele = sceneView.pointOfView!
         scene.rootNode.addChildNode(boxNode)
     }
@@ -120,9 +122,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
 
     // MARK: - ARSCNViewDelegate
-    
-
-    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         

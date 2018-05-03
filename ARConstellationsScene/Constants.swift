@@ -17,7 +17,7 @@ public class Constants {
         Constellation(name: "pisces", coord: Coordinate( x: 4, y: 0, z: 5)),
         Constellation(name: "scorpio", coord: Coordinate(x: -3, y: -3, z: 5)),
         Constellation(name: "aries", coord:  Coordinate(x: 8, y: 7, z: 5)),
-        Constellation(name: "taurus", coord: Coordinate(x: 0, y: 0, z: 0)),
+        Constellation(name: "taurus", coord: Coordinate(x: 0, y: 0, z: 5)),
         Constellation(name: "gemini", coord: Coordinate(x: 8, y: 5, z: -5)),
         Constellation(name: "cancer", coord: Coordinate(x: 4, y: 0, z: -5)),
         Constellation(name: "leo", coord: Coordinate(x: 0, y: 0, z: -5)),
