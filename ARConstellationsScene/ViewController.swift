@@ -16,6 +16,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
     @IBOutlet var sceneView: ARSCNView!
     var locationManager: CLLocationManager!
+    var baseLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Cleveland OH
+    var currentLocation: CLLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         
         // Create a new scene
        // let scene = SCNScene(named: "art.scnassets/ship.scn")!
@@ -86,7 +89,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let boxNode = SCNNode(geometry: box)
         boxNode.constraints = [SCNBillboardConstraint()]
         boxNode.position = SCNVector3(x, y, z)
-        //boxNode.transform = SCNMatrix4Rotate(boxNode.transform, Float.pi/2, 0, 1, 1)
+        //boxNode.transform = SCNMatrix4(MatrixTransforms.transformMatrix(for: simd_float4x4(boxNode.transform), originLocation: baseLocation, location: currentLocation))
         //boxNode.orientation.dele = sceneView.pointOfView!
         scene.rootNode.addChildNode(boxNode)
     }
@@ -122,14 +125,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
+
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
