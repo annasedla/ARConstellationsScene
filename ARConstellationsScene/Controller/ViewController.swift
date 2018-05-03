@@ -86,12 +86,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         //placing constellations over material
         let material = SCNMaterial()
+        let boxNodes = SCNNode(geometry: box)
         material.diffuse.contents = constellation
         box.materials = [material]
-        let boxNodes = SCNNode(geometry: box)
         let boxNode = SCNNode(geometry: box)
 
-        
         //adds constraints so the constellation is always facing the viewer
         boxNode.constraints = [SCNBillboardConstraint()]
         boxNode.position = SCNVector3(x, y, z)
@@ -147,7 +146,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             }
             else {
                 placeConstellationInSpace(constellation: UIImage(named: con.name)!, x: con.coord.x, y: con.coord.y, z: con.coord.z, scene: scene)
-                
             }
         }
     }
