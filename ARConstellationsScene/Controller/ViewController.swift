@@ -18,27 +18,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     var locationManager: CLLocationManager!
     var baseLocation: CLLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Cleveland
     var currentLocation: CLLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Default
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let scene = SCNScene()
         
-        //core motion framework
-        //let motionManager = CMMotionManager()
-        //motionManager.startDeviceMotionUpdates()
-        //var data = motionManager.deviceMotion
-       
-       // placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 0, y: 4, z: -5, scene: scene)
-       // placeConstellationInSpace(constellatio    n: UIImage(named: "scorpio")!, x: 2, y: 2, z: -5, scene: scene)
-        //placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -5, scene: scene)
-        
-        //usaminor, usamajor, gemini
-        
-        
-        for con in Constants.constellations {
-            placeConstellationInSpace(constellation: UIImage(named: con.name)!, x: con.coord.x, y: con.coord.y, z: con.coord.z, scene: scene)
-        }
+        renderConstellations(scene)
         
 
         // Set the scene to the view
@@ -107,6 +94,23 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
         // Run the view's session
         sceneView.session.run(configuration)
+    }
+    
+    
+    fileprivate func inLowerHemisphere() -> Bool {
+        return self.currentLocation.coordinate.latitude < 0
+    }
+    
+    fileprivate func renderConstellations(_ scene: SCNScene) {        
+        for con in Constants.constellations {
+            if inLowerHemisphere() {
+                placeConstellationInSpace(constellation: UIImage(named: con.name)!, x: con.coord.x * -1, y: con.coord.y * -1, z: con.coord.z, scene: scene)
+            }
+            else {
+                placeConstellationInSpace(constellation: UIImage(named: con.name)!, x: con.coord.x, y: con.coord.y, z: con.coord.z, scene: scene)
+                
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
