@@ -371,13 +371,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ST7AW2P47A;
+				DEVELOPMENT_TEAM = 2LUMF3X3MA;
 				INFOPLIST_FILE = ARConstellationsScene/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbg28.ARConstellationsScene;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axs1202.ARConstellationsScene;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,13 +389,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ST7AW2P47A;
+				DEVELOPMENT_TEAM = 2LUMF3X3MA;
 				INFOPLIST_FILE = ARConstellationsScene/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbg28.ARConstellationsScene;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axs1202.ARConstellationsScene;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
