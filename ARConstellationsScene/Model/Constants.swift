@@ -8,11 +8,12 @@
 
 import Foundation
 
-
-import Foundation
-
 public class Constants {
     
+    /*
+     MARK: List of all main constellations on display including their position on North Pole
+     Taken from http://www.constellation-guide.com/constellation-map/
+     */
     static let constellations = [
         Constellation(name: "pisces", coord: Coordinate( x: 4, y: 0, z: 5)),
         Constellation(name: "scorpio", coord: Coordinate(x: -3, y: -3, z: 5)),
@@ -32,6 +33,7 @@ public class Constants {
     ]
 }
 
+//struct for coordinate and name of a constellations to be transformed
 public struct Constellation {
     let name: String
     let coord: Coordinate

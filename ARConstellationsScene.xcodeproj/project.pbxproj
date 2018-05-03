@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A2E5EF52098FD770048E11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E5EF42098FD770048E11A /* AppDelegate.swift */; };
-		1A2E5EF72098FD770048E11A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E5EF62098FD770048E11A /* art.scnassets */; };
 		1A2E5EF92098FD770048E11A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E5EF82098FD770048E11A /* ViewController.swift */; };
 		1A2E5EFC2098FD770048E11A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E5EFA2098FD770048E11A /* Main.storyboard */; };
 		1A2E5EFE2098FD780048E11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E5EFD2098FD780048E11A /* Assets.xcassets */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		1A2E5EF12098FD770048E11A /* ARConstellationsScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARConstellationsScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2E5EF42098FD770048E11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A2E5EF62098FD770048E11A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		1A2E5EF82098FD770048E11A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A2E5EFB2098FD770048E11A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A2E5EFD2098FD780048E11A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		EDD2B6EB209BC5F500FE012E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1A2E5EF62098FD770048E11A /* art.scnassets */,
 				1A2E5EFA2098FD770048E11A /* Main.storyboard */,
 				1A2E5EFD2098FD780048E11A /* Assets.xcassets */,
 				1A2E5EFF2098FD780048E11A /* LaunchScreen.storyboard */,
@@ -210,7 +207,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2E5EF72098FD770048E11A /* art.scnassets in Resources */,
 				1A2E5F012098FD780048E11A /* LaunchScreen.storyboard in Resources */,
 				1A2E5EFE2098FD780048E11A /* Assets.xcassets in Resources */,
 				1A2E5EFC2098FD770048E11A /* Main.storyboard in Resources */,

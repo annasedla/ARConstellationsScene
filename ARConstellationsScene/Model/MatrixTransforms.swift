@@ -11,16 +11,10 @@ import GLKit.GLKMatrix4
 import SceneKit
 import CoreLocation
 
-
+//Code used for matrix transformations based on phones location
 class MatrixTransforms {
-    
-    // Usage: boxNode.transform = SCNMatrix4(MatrixTransforms.transformMatrix(for: simd_float4x4(boxNode.transform), originLocation: baseLocation, location: currentLocation))
-    // var baseLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Cleveland OH
-    // var currentLocation: CLLocation = CLLocation(latitude: 41.505493, longitude: -81.681290) // Default
-    // locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-    // Code found in these files is a mix of
-    //  Stackoverflow snippets
-    // This CoreLocation guide: bit.ly/2Kvc3lm
+
+    // Reimplemented from this CoreLocation guide: bit.ly/2Kvc3lm and modified
     // Our own modifications to fit swift 3/4
     
     //    column 0  column 1  column 2  column 3
@@ -41,6 +35,7 @@ class MatrixTransforms {
     //       −sinθ      0       cosθ      0    
     //         0        0         0       1    
     
+   //rotates around y axis
    static func rotateAroundY(with matrix: matrix_float4x4, for degrees: Float) -> matrix_float4x4 {
         var matrix : matrix_float4x4 = matrix
         
@@ -52,6 +47,7 @@ class MatrixTransforms {
         return matrix.inverse
     }
     
+   //transforms matrix based on input and output locations
    static func transformMatrix(for matrix: simd_float4x4, originLocation: CLLocation, location: CLLocation) -> simd_float4x4 {
         let distance = Float(location.distance(from: originLocation))
         let bearing = getBearingBetweenTwoPoints(point1: originLocation, point2: location)
@@ -62,7 +58,7 @@ class MatrixTransforms {
         return simd_mul(matrix, transformMatrix)
     }
     
-    
+    //helper functions
     static func degreesToRadians(degrees: Double) -> Double { return degrees * .pi / 180.0 }
     static func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / .pi }
     
