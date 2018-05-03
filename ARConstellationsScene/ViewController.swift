@@ -41,7 +41,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         placeConstellationInSpace(constellation: UIImage(named: "cancer")!, x: 4, y: 0, z: -5, scene: scene)
         placeConstellationInSpace(constellation: UIImage(named: "leo")!, x: 0, y: 0, z: -5, scene: scene)
         placeConstellationInSpace(constellation: UIImage(named: "virgo")!, x: -3, y: 0, z: -5, scene: scene)
-        placeConstellationInSpace(constellation: UIImage(named: "aries")!, x: 20, y: 3, z: -0.001, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "aries")!, x: 18, y: 3, z: -5, scene: scene)
+        placeConstellationInSpace(constellation: UIImage(named: "pisces")!, x: 20, y: 0, z: -5, scene: scene)
 
         // Set the scene to the view
         sceneView.scene = scene
