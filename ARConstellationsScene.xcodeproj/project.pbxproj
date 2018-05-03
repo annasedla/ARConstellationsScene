@@ -15,6 +15,7 @@
 		1A2E5F012098FD780048E11A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E5EFF2098FD780048E11A /* LaunchScreen.storyboard */; };
 		1A2E5F0C2098FD780048E11A /* ARConstellationsSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E5F0B2098FD780048E11A /* ARConstellationsSceneTests.swift */; };
 		1A2E5F17209934780048E11A /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E5F16209934780048E11A /* data.swift */; };
+		EDEDDBC2209AA7E800D7DA69 /* MatrixTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEDDBC1209AA7E800D7DA69 /* MatrixTransforms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		1A2E5F0B2098FD780048E11A /* ARConstellationsSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARConstellationsSceneTests.swift; sourceTree = "<group>"; };
 		1A2E5F0D2098FD780048E11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2E5F16209934780048E11A /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		EDEDDBC1209AA7E800D7DA69 /* MatrixTransforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTransforms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				1A2E5EF42098FD770048E11A /* AppDelegate.swift */,
 				1A2E5EF62098FD770048E11A /* art.scnassets */,
 				1A2E5EF82098FD770048E11A /* ViewController.swift */,
+				EDEDDBC1209AA7E800D7DA69 /* MatrixTransforms.swift */,
 				1A2E5EFA2098FD770048E11A /* Main.storyboard */,
 				1A2E5EFD2098FD780048E11A /* Assets.xcassets */,
 				1A2E5EFF2098FD780048E11A /* LaunchScreen.storyboard */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2E5EF92098FD770048E11A /* ViewController.swift in Sources */,
+				EDEDDBC2209AA7E800D7DA69 /* MatrixTransforms.swift in Sources */,
 				1A2E5F17209934780048E11A /* data.swift in Sources */,
 				1A2E5EF52098FD770048E11A /* AppDelegate.swift in Sources */,
 			);
@@ -367,13 +371,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2LUMF3X3MA;
+				DEVELOPMENT_TEAM = ST7AW2P47A;
 				INFOPLIST_FILE = ARConstellationsScene/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.ARConstellationsScene;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dbg28.ARConstellationsScene;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,13 +389,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2LUMF3X3MA;
+				DEVELOPMENT_TEAM = ST7AW2P47A;
 				INFOPLIST_FILE = ARConstellationsScene/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.ARConstellationsScene;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dbg28.ARConstellationsScene;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
